@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_liked"
+            android:icon="@drawable/heart"
+            android:title="የወደድካቸው" />
+        <item
+            android:id="@+id/nav_rating"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="ስለዚህ አፕልኬሽን ደረጃ መስጫ" />
+        <item
+            android:id="@+id/nav_share"
+            android:icon="@drawable/share"
+            android:title="ይህን አፕልኬሽን ለማካፈ" />
+        <item
+            android:id="@+id/nav_help"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="እግዛ" />
+        <item
+            android:id="@+id/nav_more"
+            android:icon="@drawable/binoculars"
+            android:title="ተጨማሪ አፕልኬሽኖች" />
+    </group>
+
+
+    <item android:title="Communicate">
+        <menu>
+            <item
+                android:id="@+id/nav_facebook"
+                android:icon="@drawable/facebook"
+                android:title="Facebook" />
+            <item
+                android:id="@+id/nav_about"
+                android:icon="@drawable/info"
+                android:title="ስለ" />
+            <item
+                android:id="@+id/nav_exit"
+                android:icon="@drawable/close_window"
+                android:title="መውጫ" />
+        </menu>
+    </item>
+
+</menu>

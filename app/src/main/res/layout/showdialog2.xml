@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/txt_dialog_verse"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#000000"
+            android:textSize="25sp"
+            android:gravity="center_horizontal"
+            android:layout_margin="10dp"
+            android:text="ንግዲህ ሁልጊዜ ታምነን፥ በእምነት እንጂ በማየት አንመላለስምና በሥጋ ስናድር ከጌታ ተለይተን በስደት እንዳለን የምናውቅ ከሆንን"/>
+        <TextView
+            android:id="@+id/txt_dialog_verse_num"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:layout_marginRight="20dp"
+            android:text="ወደ ቆሮንቶስ ሰዎች 5:7"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/btn_dialog_share"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/share"
+            android:text="አካፍ"
+            android:layout_weight="1"/>
+    </LinearLayout>
+</LinearLayout>
