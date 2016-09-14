@@ -32,7 +32,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private Toolbar toolbar;
     private ViewPager viewPager;
     private Database myDatabase;
-    private NotificationManager myNotificationManager;
     private Calendar myCalendar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,7 +68,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 newdaily.setTime(myCalendar.getTime().toString());
                 if(newdaily.getTime() != dailyVerse.getTime()){
                     Collections.shuffle(verses);
-                    sendNotification("Todays Verse:  "+verses.get(0).getVerse(),verses.get(0).getBody());
                     ContentValues cv = new ContentValues();
                     cv.put(Database.DailyColumn[1],newdaily.getTime().toString());
                     myDatabase.Delete_All(Database.DailyTable);
@@ -83,7 +81,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             try {
                 newdaily.setTime(myCalendar.getTime().toString());
                 Collections.shuffle(verses);
-                sendNotification("Todays Verse:  "+verses.get(0).getVerse(),verses.get(0).getBody());
                 ContentValues cv = new ContentValues();
                 cv.put(Database.DailyColumn[1],newdaily.getTime().toString());
                 myDatabase.Delete_All(Database.DailyTable);
@@ -150,27 +147,5 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public boolean onOptionsItemSelected(MenuItem item) {
         return super.onOptionsItemSelected(item);
     }
-    private void sendNotification(String title,String msg) {
-        myNotificationManager = (NotificationManager)
-                this.getSystemService(Context.NOTIFICATION_SERVICE);
 
-        PendingIntent contentIntent = PendingIntent.getActivity(this, 0, new Intent(this, MainActivity.class), 0);
-
-        NotificationCompat.Builder mBuilder =
-                new NotificationCompat.Builder(this)
-                        .setSmallIcon(R.drawable.icon)
-                        .setContentTitle(title)
-                        .setStyle(new NotificationCompat.BigTextStyle()
-                                .bigText(msg))
-                        .setContentText(msg);
-        try{
-            Uri uri = Uri.parse("android.resource://"+getPackageName()+"/"+R.raw.ringtone);
-            mBuilder.setSound(uri);
-        }catch (Exception e){
-
-        }
-
-        mBuilder.setContentIntent(contentIntent);
-        myNotificationManager.notify(1, mBuilder.build());
-    }
 }
